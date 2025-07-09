@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Split-It – Smart Bill Splitter</title>
+  <link rel="stylesheet" href="style.css"> <!-- External CSS -->
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+</head>
+
+<body>
+  <div class="container">
+
+    <!-- Header -->
+    <header>
+      <h1>💸 Split-It</h1>
+      <button onclick="toggleTheme()" id="theme-btn">🌗 Toggle Theme</button>
+
+      <p class="tagline">A simple tool to fairly split group expenses</p>
+    </header>
+
+    <!-- About Section -->
+    <section id="about-section">
+      <h2>📘 About</h2>
+      <p>
+        Split-It helps you calculate and settle shared expenses quickly and fairly. Perfect for friends,
+        roommates, or anyone sharing costs for food, travel, or events.
+      </p>
+    </section>
+
+    <!-- How it Works -->
+    <section id="how-section">
+      <h2>⚙️ How It Works</h2>
+      <ol>
+        <li>Enter participant names below</li>
+        <li>Click "Continue" to enter how much each person paid</li>
+        <li>Click "Calculate" to see who owes whom</li>
+      </ol>
+    </section>
+
+    <!-- Section 1: Setup -->
+    <section id="setup-section">
+      <h2>👥 Step 1: Add Participants</h2>
+      <p>Enter at least 2 names:</p>
+      <div id="names-container">
+        <input type="text" class="name-input" placeholder="Enter name">
+        <input type="text" class="name-input" placeholder="Enter name">
+      </div>
+      <button onclick="addNameField()">+ Add Name</button>
+      <br><br>
+      <button onclick="goToSplit()">➡ Continue</button>
+    </section>
+
+    <!-- Section 2: Expense Entry -->
+    <section id="split-section" style="display: none;">
+      <h2>💵 Step 2: Enter Expenses</h2>
+      <form id="expense-form"></form>
+      <button onclick="calculateSplit()">🧮 Calculate Split</button>
+      <div id="result"></div>
+    <section id="chart-section" style="display: none;">
+        <h2>📊 Contribution Chart</h2>
+<canvas id="splitChart" style="max-width: 250px; max-height: 250px;"></canvas>
+    </section>
+
+    <button onclick="window.print()">🖨️ Print Summary</button>
+
+
+      <br>
+      <button onclick="startOver()">🔁 Start Over</button>
+    </section>
+
+    <!-- Benefits -->
+    <section id="benefits-section">
+      <h2>🎁 Why Use Split-It?</h2>
+      <ul>
+        <li>✅ Works offline in your browser</li>
+        <li>✅ Beginner-friendly and practical</li>
+      </ul>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+      <hr>
+      <p>Made with ❤️ by Bhathma Priyaa </p>
+    </footer>
+
+  </div>
+
+  <script src="script.js"></script> <!-- External JS -->
+</body>
+</html>
